@@ -10,7 +10,12 @@
 #import "BonjourClient.h"
 #import "BonjourServer.h"
 
-@interface ViewController ()
+@interface ViewController () {
+
+}
+
+@property(nonatomic,strong) BonjourServer *server;
+@property(nonatomic,strong) BonjourClient *client;
 
 @end
 
@@ -28,13 +33,15 @@
 }
 
 - (IBAction)clientStartAction:(id)sender {
-    BonjourClient *client = [[BonjourClient alloc] init];
-    [client startSearch];
+    if (!_client) {
+        _client = [[BonjourClient alloc] init];
+    }
+    [_client startMirror];
 }
 
 - (IBAction)serviceStartAction:(id)sender {
-    BonjourServer *server = [[BonjourServer alloc] init];
-    [server publish];
+    self.server = [[BonjourServer alloc] init];
+    [self.server publish];
 }
 
 @end

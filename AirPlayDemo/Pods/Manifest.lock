@@ -1,0 +1,22 @@
+PODS:
+  - CocoaAsyncSocket (7.6.1)
+
+DEPENDENCIES:
+  - CocoaAsyncSocket (from `https://github.com/robbiehanson/CocoaAsyncSocket.git`, tag `7.6.1`)
+
+EXTERNAL SOURCES:
+  CocoaAsyncSocket:
+    :git: https://github.com/robbiehanson/CocoaAsyncSocket.git
+    :tag: 7.6.1
+
+CHECKOUT OPTIONS:
+  CocoaAsyncSocket:
+    :git: https://github.com/robbiehanson/CocoaAsyncSocket.git
+    :tag: 7.6.1
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
+
+PODFILE CHECKSUM: 1e23b217330b8b6752a81f8dd679e765a49baa5a
+
+COCOAPODS: 1.2.0

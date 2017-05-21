@@ -11,4 +11,5 @@
 @interface BonjourClient : NSObject
 
 - (void) startSearch;
+- (void) startMirror;
 @end

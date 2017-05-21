@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40C9D814D3932C3D5CD001B3 /* libPods-AirPlayDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A854E19FF52D2F5C2532EE /* libPods-AirPlayDemo.a */; };
+		981369EB1EC9A98E007FD5F5 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 981369EA1EC9A98E007FD5F5 /* DeviceInfo.m */; };
+		981369ED1EC9FFAC007FD5F5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981369EC1EC9FFAC007FD5F5 /* MediaPlayer.framework */; };
+		981369FC1ECAD132007FD5F5 /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 981369FB1ECAD132007FD5F5 /* UIPopoverController+iPhone.m */; };
 		989666E51EC89250002CAC77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 989666E41EC89250002CAC77 /* main.m */; };
 		989666E81EC89250002CAC77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 989666E71EC89250002CAC77 /* AppDelegate.m */; };
 		989666EB1EC89250002CAC77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 989666EA1EC89250002CAC77 /* ViewController.m */; };
@@ -18,6 +22,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8ACFD1E64206932AE32BA719 /* Pods-AirPlayDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirPlayDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirPlayDemo/Pods-AirPlayDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		981369E91EC9A98E007FD5F5 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		981369EA1EC9A98E007FD5F5 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		981369EC1EC9FFAC007FD5F5 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		981369F21ECAD127007FD5F5 /* MPAudioDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioDeviceController.h; sourceTree = "<group>"; };
+		981369F31ECAD127007FD5F5 /* MPAudioVideoRoutingActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioVideoRoutingActionSheet.h; sourceTree = "<group>"; };
+		981369F41ECAD127007FD5F5 /* MPAudioVideoRoutingPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioVideoRoutingPopoverController.h; sourceTree = "<group>"; };
+		981369F51ECAD127007FD5F5 /* MPAudioVideoRoutingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioVideoRoutingTableViewController.h; sourceTree = "<group>"; };
+		981369F61ECAD127007FD5F5 /* MPAudioVideoRoutingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioVideoRoutingViewController.h; sourceTree = "<group>"; };
+		981369F71ECAD127007FD5F5 /* MPAVRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAVRoute.h; sourceTree = "<group>"; };
+		981369F81ECAD127007FD5F5 /* MPAVRoutingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAVRoutingController.h; sourceTree = "<group>"; };
+		981369F91ECAD127007FD5F5 /* MPAVSystemRoutingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAVSystemRoutingController.h; sourceTree = "<group>"; };
+		981369FA1ECAD132007FD5F5 /* UIPopoverController+iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+iPhone.h"; sourceTree = "<group>"; };
+		981369FB1ECAD132007FD5F5 /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+iPhone.m"; sourceTree = "<group>"; };
 		989666E01EC89250002CAC77 /* AirPlayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirPlayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989666E41EC89250002CAC77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		989666E61EC89250002CAC77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +50,8 @@
 		989666FB1EC896FC002CAC77 /* BonjourClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourClient.m; sourceTree = "<group>"; };
 		989666FD1EC89714002CAC77 /* BonjourServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourServer.h; sourceTree = "<group>"; };
 		989666FE1EC89714002CAC77 /* BonjourServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourServer.m; sourceTree = "<group>"; };
+		D9A854E19FF52D2F5C2532EE /* libPods-AirPlayDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AirPlayDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA588A59B71F5E8D00D48107 /* Pods-AirPlayDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirPlayDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirPlayDemo/Pods-AirPlayDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +59,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981369ED1EC9FFAC007FD5F5 /* MediaPlayer.framework in Frameworks */,
+				40C9D814D3932C3D5CD001B3 /* libPods-AirPlayDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200FB7902050CEDA1996B3A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				981369EC1EC9FFAC007FD5F5 /* MediaPlayer.framework */,
+				D9A854E19FF52D2F5C2532EE /* libPods-AirPlayDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32A4A1FF30049E48EAAD519E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8ACFD1E64206932AE32BA719 /* Pods-AirPlayDemo.debug.xcconfig */,
+				DA588A59B71F5E8D00D48107 /* Pods-AirPlayDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		981369F11ECAD127007FD5F5 /* MediaPlayer Headers */ = {
+			isa = PBXGroup;
+			children = (
+				981369F21ECAD127007FD5F5 /* MPAudioDeviceController.h */,
+				981369F31ECAD127007FD5F5 /* MPAudioVideoRoutingActionSheet.h */,
+				981369F41ECAD127007FD5F5 /* MPAudioVideoRoutingPopoverController.h */,
+				981369F51ECAD127007FD5F5 /* MPAudioVideoRoutingTableViewController.h */,
+				981369F61ECAD127007FD5F5 /* MPAudioVideoRoutingViewController.h */,
+				981369F71ECAD127007FD5F5 /* MPAVRoute.h */,
+				981369F81ECAD127007FD5F5 /* MPAVRoutingController.h */,
+				981369F91ECAD127007FD5F5 /* MPAVSystemRoutingController.h */,
+			);
+			path = "MediaPlayer Headers";
+			sourceTree = "<group>";
+		};
 		989666D71EC89250002CAC77 = {
 			isa = PBXGroup;
 			children = (
 				989666E21EC89250002CAC77 /* AirPlayDemo */,
 				989666E11EC89250002CAC77 /* Products */,
+				32A4A1FF30049E48EAAD519E /* Pods */,
+				200FB7902050CEDA1996B3A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +121,11 @@
 		989666E21EC89250002CAC77 /* AirPlayDemo */ = {
 			isa = PBXGroup;
 			children = (
+				981369FA1ECAD132007FD5F5 /* UIPopoverController+iPhone.h */,
+				981369FB1ECAD132007FD5F5 /* UIPopoverController+iPhone.m */,
+				981369F11ECAD127007FD5F5 /* MediaPlayer Headers */,
+				981369E91EC9A98E007FD5F5 /* DeviceInfo.h */,
+				981369EA1EC9A98E007FD5F5 /* DeviceInfo.m */,
 				989666E61EC89250002CAC77 /* AppDelegate.h */,
 				989666E71EC89250002CAC77 /* AppDelegate.m */,
 				989666E91EC89250002CAC77 /* ViewController.h */,
@@ -96,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 989666F71EC89250002CAC77 /* Build configuration list for PBXNativeTarget "AirPlayDemo" */;
 			buildPhases = (
+				50F6B9DE60FD43E6365D63F3 /* [CP] Check Pods Manifest.lock */,
 				989666DC1EC89250002CAC77 /* Sources */,
 				989666DD1EC89250002CAC77 /* Frameworks */,
 				989666DE1EC89250002CAC77 /* Resources */,
+				04D01D8F44DC714B489EF173 /* [CP] Embed Pods Frameworks */,
+				16215AD3CC2F605811E05452 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,14 +221,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04D01D8F44DC714B489EF173 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirPlayDemo/Pods-AirPlayDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16215AD3CC2F605811E05452 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirPlayDemo/Pods-AirPlayDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50F6B9DE60FD43E6365D63F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		989666DC1EC89250002CAC77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				989666FF1EC89714002CAC77 /* BonjourServer.m in Sources */,
+				981369FC1ECAD132007FD5F5 /* UIPopoverController+iPhone.m in Sources */,
 				989666FC1EC896FC002CAC77 /* BonjourClient.m in Sources */,
 				989666EB1EC89250002CAC77 /* ViewController.m in Sources */,
+				981369EB1EC9A98E007FD5F5 /* DeviceInfo.m in Sources */,
 				989666E81EC89250002CAC77 /* AppDelegate.m in Sources */,
 				989666E51EC89250002CAC77 /* main.m in Sources */,
 			);
@@ -285,9 +400,11 @@
 		};
 		989666F81EC89250002CAC77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ACFD1E64206932AE32BA719 /* Pods-AirPlayDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MT2BRNBJYZ;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = AirPlayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AirPlayDemo;
@@ -299,9 +416,11 @@
 		};
 		989666F91EC89250002CAC77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA588A59B71F5E8D00D48107 /* Pods-AirPlayDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = AirPlayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AirPlayDemo;
@@ -329,6 +448,7 @@
 				989666F91EC89250002CAC77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
