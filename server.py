@@ -24,8 +24,8 @@ while 1:
 	conn, addr = s.accept()
 	print 'Connected with ' + addr[0] + ':' + str(addr[1])
 	data = conn.recv(1024)
-	reply = 'OK...' + data
-	print reply
+	print ("receive data:%s"%data)
+	reply = 'OK...' + data + "\r\n"
 	if not data: 
 		break
 	conn.sendall(reply)
