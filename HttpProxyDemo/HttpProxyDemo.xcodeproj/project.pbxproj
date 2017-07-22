@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BEA71B6A1306CB6917A8B511 /* libPods-HttpProxyDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB0CE96BCCAE19493FF1EFB /* libPods-HttpProxyDemo.a */; };
+		CD2A477A1F1E2F9C009EFA3B /* ClientTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2A47791F1E2F9C009EFA3B /* ClientTestViewController.m */; };
+		CD2A477D1F1E3767009EFA3B /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2A477C1F1E3766009EFA3B /* ServerViewController.m */; };
+		CD40AA3E1F134E7400ADC7C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40AA3D1F134E7400ADC7C6 /* main.m */; };
+		CD40AA411F134E7400ADC7C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40AA401F134E7400ADC7C6 /* AppDelegate.m */; };
+		CD40AA441F134E7400ADC7C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40AA431F134E7400ADC7C6 /* ViewController.m */; };
+		CD40AA471F134E7400ADC7C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD40AA451F134E7400ADC7C6 /* Main.storyboard */; };
+		CD40AA491F134E7400ADC7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD40AA481F134E7400ADC7C6 /* Assets.xcassets */; };
+		CD40AA4C1F134E7400ADC7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD40AA4A1F134E7400ADC7C6 /* LaunchScreen.storyboard */; };
+		CD40AA591F13849F00ADC7C6 /* HttpProxyServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40AA581F13849F00ADC7C6 /* HttpProxyServer.m */; };
+		CD6FB43E1F21A31A00B60D8F /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB43D1F21A31A00B60D8F /* HttpClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		039CDEAD3704972223BFEB7D /* Pods-HttpProxyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpProxyDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HttpProxyDemo/Pods-HttpProxyDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3BCFF41B43E565359C04232D /* Pods-HttpProxyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpProxyDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HttpProxyDemo/Pods-HttpProxyDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CAB0CE96BCCAE19493FF1EFB /* libPods-HttpProxyDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HttpProxyDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD2A47781F1E2F9C009EFA3B /* ClientTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientTestViewController.h; sourceTree = "<group>"; };
+		CD2A47791F1E2F9C009EFA3B /* ClientTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientTestViewController.m; sourceTree = "<group>"; };
+		CD2A477B1F1E3766009EFA3B /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerViewController.h; sourceTree = "<group>"; };
+		CD2A477C1F1E3766009EFA3B /* ServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerViewController.m; sourceTree = "<group>"; };
+		CD40AA391F134E7400ADC7C6 /* HttpProxyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpProxyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD40AA3D1F134E7400ADC7C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CD40AA3F1F134E7400ADC7C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CD40AA401F134E7400ADC7C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CD40AA421F134E7400ADC7C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CD40AA431F134E7400ADC7C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CD40AA461F134E7400ADC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD40AA481F134E7400ADC7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD40AA4B1F134E7400ADC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD40AA4D1F134E7400ADC7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD40AA571F13849F00ADC7C6 /* HttpProxyServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpProxyServer.h; sourceTree = "<group>"; };
+		CD40AA581F13849F00ADC7C6 /* HttpProxyServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpProxyServer.m; sourceTree = "<group>"; };
+		CD6FB43C1F21A31A00B60D8F /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		CD6FB43D1F21A31A00B60D8F /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD40AA361F134E7400ADC7C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA71B6A1306CB6917A8B511 /* libPods-HttpProxyDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14A3BED0E2AF2074651795AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAB0CE96BCCAE19493FF1EFB /* libPods-HttpProxyDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51BF005EDF5E68ACA5DE0E8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				039CDEAD3704972223BFEB7D /* Pods-HttpProxyDemo.debug.xcconfig */,
+				3BCFF41B43E565359C04232D /* Pods-HttpProxyDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CD40AA301F134E7400ADC7C6 = {
+			isa = PBXGroup;
+			children = (
+				CD40AA3B1F134E7400ADC7C6 /* HttpProxyDemo */,
+				CD40AA3A1F134E7400ADC7C6 /* Products */,
+				51BF005EDF5E68ACA5DE0E8A /* Pods */,
+				14A3BED0E2AF2074651795AD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD40AA3A1F134E7400ADC7C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD40AA391F134E7400ADC7C6 /* HttpProxyDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD40AA3B1F134E7400ADC7C6 /* HttpProxyDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CD40AA561F13849F00ADC7C6 /* HttpProxy */,
+				CD40AA3F1F134E7400ADC7C6 /* AppDelegate.h */,
+				CD40AA401F134E7400ADC7C6 /* AppDelegate.m */,
+				CD40AA421F134E7400ADC7C6 /* ViewController.h */,
+				CD40AA431F134E7400ADC7C6 /* ViewController.m */,
+				CD40AA451F134E7400ADC7C6 /* Main.storyboard */,
+				CD40AA481F134E7400ADC7C6 /* Assets.xcassets */,
+				CD40AA4A1F134E7400ADC7C6 /* LaunchScreen.storyboard */,
+				CD40AA4D1F134E7400ADC7C6 /* Info.plist */,
+				CD40AA3C1F134E7400ADC7C6 /* Supporting Files */,
+				CD2A47781F1E2F9C009EFA3B /* ClientTestViewController.h */,
+				CD2A47791F1E2F9C009EFA3B /* ClientTestViewController.m */,
+				CD2A477B1F1E3766009EFA3B /* ServerViewController.h */,
+				CD2A477C1F1E3766009EFA3B /* ServerViewController.m */,
+			);
+			path = HttpProxyDemo;
+			sourceTree = "<group>";
+		};
+		CD40AA3C1F134E7400ADC7C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD40AA3D1F134E7400ADC7C6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD40AA561F13849F00ADC7C6 /* HttpProxy */ = {
+			isa = PBXGroup;
+			children = (
+				CD40AA571F13849F00ADC7C6 /* HttpProxyServer.h */,
+				CD40AA581F13849F00ADC7C6 /* HttpProxyServer.m */,
+				CD6FB43C1F21A31A00B60D8F /* HttpClient.h */,
+				CD6FB43D1F21A31A00B60D8F /* HttpClient.m */,
+			);
+			path = HttpProxy;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD40AA381F134E7400ADC7C6 /* HttpProxyDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD40AA501F134E7400ADC7C6 /* Build configuration list for PBXNativeTarget "HttpProxyDemo" */;
+			buildPhases = (
+				9EDAA16315BDEF743A019427 /* [CP] Check Pods Manifest.lock */,
+				CD40AA351F134E7400ADC7C6 /* Sources */,
+				CD40AA361F134E7400ADC7C6 /* Frameworks */,
+				CD40AA371F134E7400ADC7C6 /* Resources */,
+				12331EC62AC57B41DF256AF2 /* [CP] Embed Pods Frameworks */,
+				91365C93A9928F43FB905AEB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HttpProxyDemo;
+			productName = HttpProxyDemo;
+			productReference = CD40AA391F134E7400ADC7C6 /* HttpProxyDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD40AA311F134E7400ADC7C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "包红来";
+				TargetAttributes = {
+					CD40AA381F134E7400ADC7C6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MT2BRNBJYZ;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = CD40AA341F134E7400ADC7C6 /* Build configuration list for PBXProject "HttpProxyDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD40AA301F134E7400ADC7C6;
+			productRefGroup = CD40AA3A1F134E7400ADC7C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD40AA381F134E7400ADC7C6 /* HttpProxyDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD40AA371F134E7400ADC7C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD40AA4C1F134E7400ADC7C6 /* LaunchScreen.storyboard in Resources */,
+				CD40AA491F134E7400ADC7C6 /* Assets.xcassets in Resources */,
+				CD40AA471F134E7400ADC7C6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12331EC62AC57B41DF256AF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HttpProxyDemo/Pods-HttpProxyDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91365C93A9928F43FB905AEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HttpProxyDemo/Pods-HttpProxyDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EDAA16315BDEF743A019427 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD40AA351F134E7400ADC7C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD2A477A1F1E2F9C009EFA3B /* ClientTestViewController.m in Sources */,
+				CD40AA441F134E7400ADC7C6 /* ViewController.m in Sources */,
+				CD40AA591F13849F00ADC7C6 /* HttpProxyServer.m in Sources */,
+				CD2A477D1F1E3767009EFA3B /* ServerViewController.m in Sources */,
+				CD40AA411F134E7400ADC7C6 /* AppDelegate.m in Sources */,
+				CD6FB43E1F21A31A00B60D8F /* HttpClient.m in Sources */,
+				CD40AA3E1F134E7400ADC7C6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CD40AA451F134E7400ADC7C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD40AA461F134E7400ADC7C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD40AA4A1F134E7400ADC7C6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD40AA4B1F134E7400ADC7C6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD40AA4E1F134E7400ADC7C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CD40AA4F1F134E7400ADC7C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD40AA511F134E7400ADC7C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039CDEAD3704972223BFEB7D /* Pods-HttpProxyDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MT2BRNBJYZ;
+				INFOPLIST_FILE = HttpProxyDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HttpProxyDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d0de7c4-7fdf-49d8-a17d-62071c9aaa93";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.*";
+			};
+			name = Debug;
+		};
+		CD40AA521F134E7400ADC7C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BCFF41B43E565359C04232D /* Pods-HttpProxyDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HttpProxyDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HttpProxyDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD40AA341F134E7400ADC7C6 /* Build configuration list for PBXProject "HttpProxyDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD40AA4E1F134E7400ADC7C6 /* Debug */,
+				CD40AA4F1F134E7400ADC7C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD40AA501F134E7400ADC7C6 /* Build configuration list for PBXNativeTarget "HttpProxyDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD40AA511F134E7400ADC7C6 /* Debug */,
+				CD40AA521F134E7400ADC7C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD40AA311F134E7400ADC7C6 /* Project object */;
+}

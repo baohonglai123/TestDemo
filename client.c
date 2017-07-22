@@ -4,8 +4,8 @@
   
 int main()  
 {  
-    char * host ="172.17.60.58";
-    int port = 8888;
+    char * host ="192.168.2.2";
+    int port = 8899;
     // 创建 socket
     int socketFd = socket(AF_INET, SOCK_STREAM, 0);
     if (-1 == socketFd) {
