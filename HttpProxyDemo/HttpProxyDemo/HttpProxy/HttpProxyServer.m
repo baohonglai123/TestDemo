@@ -8,15 +8,13 @@
 
 #import "HttpProxyServer.h"
 #import "GCDAsyncSocket.h"
-@interface HttpProxyServer() <NSURLSessionDataDelegate,GCDAsyncSocketDelegate>{
-    long long _expectTotalBytes;
-    NSURLSession *_session;
-    NSURLSessionDataTask *_dataTask;
+#import "HttpClient.h"
+@interface HttpProxyServer() <GCDAsyncSocketDelegate>{
     NSURL *_url;
     GCDAsyncSocket *_asyncSocket;
     uint16_t _localPort;
-    NSDictionary *_responseHeaders;
     GCDAsyncSocket *_clientSocket;
+    HttpClient *_httpClient;
 }
 
 @property(nonatomic) NSMutableData *bufferData;
@@ -35,28 +33,19 @@ enum tag_tcp {
 - (instancetype) initWithUrl:(NSURL*)url {
     if ((self = [super init]) && url) {
         _url = url;
+        _httpClient = [[HttpClient alloc] initWithUrl:url];
         [self reset];
     }
     return self;
 }
 
 - (void) reset {
-    NSURLSessionConfiguration *sessionConfig =[NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfig.allowsCellularAccess = NO;
-    sessionConfig.shouldUseExtendedBackgroundIdleMode = NO;
-    _session = [NSURLSession sessionWithConfiguration: sessionConfig delegate:self delegateQueue:nil];
-    _dataTask = [_session dataTaskWithURL:_url];
-    _bufferData = [[NSMutableData alloc] init];
     _asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     _localPort = 8898;
 }
 
 - (void) start {
-    if (!_session) {
-        [self reset];
-    }
-    [_dataTask resume];
-    [_session finishTasksAndInvalidate];
+    [_httpClient start];
     [self startHttpServer];
 }
 
@@ -68,45 +57,12 @@ enum tag_tcp {
 }
 
 - (void) pause {
-    if (_dataTask.state == NSURLSessionTaskStateRunning) {
-        [_dataTask suspend];
-    }
+    [_httpClient pause];
 }
 
 - (void) stop {
-    [_dataTask cancel];
-    [_session invalidateAndCancel];
-    _session = nil;
+    [_httpClient stop];
     [_asyncSocket disconnectAfterReadingAndWriting];
-}
-
-
-#pragma mark - NSURLSessionDelegate
-
-- (void)URLSession:(NSURLSession *)session dataTask:(nonnull NSURLSessionDataTask *)dataTask didReceiveResponse:(nonnull NSURLResponse *)response completionHandler:(nonnull void (^)(NSURLSessionResponseDisposition))completionHandler {
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-    NSLog(@"didReceiveResponse response status code:%ld",httpResponse.statusCode);
-    NSLog(@"didReceiveResponse response header:%@",httpResponse.allHeaderFields);
-    _responseHeaders = httpResponse.allHeaderFields;
-    _expectTotalBytes = response.expectedContentLength;
-    completionHandler(NSURLSessionResponseAllow);//继续数据传输
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-    didReceiveData:(NSData *)data {
-    [self.bufferData appendData:data];
-    if (_expectTotalBytes>0) {
-        NSLog(@"didReceiveData data progress:%f",[self.bufferData length]*1.0/(_expectTotalBytes *1.0));
-    } else {
-        NSLog(@"didReceiveData data length:%lu",[data length]);
-    }
-    
-}
-/** 告诉delegate, task已经完成. */
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
-    NSLog(@"task didCompleteWithError");
-//    NSString *tmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"test.mp4"];
-//    [self.bufferData writeToFile:tmpPath atomically:YES];
 }
 
 #pragma mark - GCDAsyncSocketDelegate
@@ -137,17 +93,13 @@ enum tag_tcp {
     [rep appendData:rep_data];
     
     [socket writeData:rep withTimeout:TIMEOUT_NONE tag:TAG_REPLY];
-    [self writeData];
+//    [self writeData];
 }
 
 - (void) writeData {
-//    for (int i=0; i<100; ++i) {
-//        NSString *dataStr = @"abcd";
-//        [_clientSocket writeData:[dataStr dataUsingEncoding:NSASCIIStringEncoding] withTimeout:-1 tag:0];
-//    }
-    [_clientSocket writeData:self.bufferData withTimeout:-1 tag:0];
-    
-    
+    NSData *bufferData = [_httpClient nextBuffer];
+    NSLog(@"writeData size:%lu",bufferData.length);
+    [_clientSocket writeData:bufferData withTimeout:-1 tag:0];
     [_clientSocket disconnectAfterReadingAndWriting];
 }
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(nonnull NSData *)data withTag:(long)tag {
@@ -175,7 +127,7 @@ enum tag_tcp {
         {
             NSString *header = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
             NSLog(@"========Header============ :%@",header);
-            [self replyOK:sock withHeaders:_responseHeaders withData:nil];
+            [self replyOK:sock withHeaders:_httpClient.respHeaders withData:nil];
 
             return;
         }

@@ -10,5 +10,11 @@
 
 @interface HttpClient : NSObject
 
-- (instancetype)
+@property (nonatomic,readonly) NSData *nextBuffer;
+@property (nonatomic,readonly) NSDictionary *respHeaders;
+
+- (instancetype) initWithUrl:(NSURL *) url;
+- (void) start;
+- (void) pause;
+- (void) stop;
 @end

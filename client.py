@@ -4,7 +4,7 @@
 from socket import *
 
 HOST = '192.168.2.2'       #服务器的主机名
-PORT = 8899          #端口号
+PORT = 8898          #端口号
 BUFSIZ = 1024         #缓冲区
 ADDR = (HOST,PORT)     #地址
 

@@ -7,16 +7,36 @@
 //
 
 #import "HttpClient.h"
+
+@interface SocketPacket : NSObject {
+    @public
+    NSData *buffer;
+}
+- (instancetype) initWithData:(NSData *)data;
+@end
+
+@implementation SocketPacket
+
+- (instancetype) initWithData:(NSData *)data {
+    if ((self = [super init])) {
+        self->buffer = data;
+    }
+    return self;
+}
+
+@end
+
 @interface HttpClient()<NSURLSessionDataDelegate> {
     NSURL *_httpUrl;
     NSURLSession *_session;
     NSURLSessionDataTask *_dataTask;
-    NSMutableData *_bufferData;
+    NSMutableArray *_bufferQueue;
     NSDictionary *_responseHeaders;
     long long _expectTotalBytes;
 
 }
 @end
+
 
 @implementation HttpClient
 
@@ -33,7 +53,7 @@
     sessionConfig.shouldUseExtendedBackgroundIdleMode = NO;
     _session = [NSURLSession sessionWithConfiguration: sessionConfig delegate:self delegateQueue:nil];
     _dataTask = [_session dataTaskWithURL:_httpUrl];
-    _bufferData = [[NSMutableData alloc] init];
+    _bufferQueue = [NSMutableArray new];
 }
 
 - (void) start {
@@ -45,6 +65,21 @@
 - (void) stop {
     [_dataTask suspend];
     [_session invalidateAndCancel];
+}
+
+- (NSData *) nextBuffer {
+    @synchronized (_bufferQueue) {
+        NSMutableData *result = [NSMutableData new];
+        for (SocketPacket *packet in _bufferQueue) {
+            [result appendData:packet->buffer];
+        }
+        [_bufferQueue removeAllObjects];
+        return [result copy];
+    }
+}
+
+- (NSDictionary*) respHeaders {
+    return [_responseHeaders copy];
 }
 
 #pragma mark - NSURLSessionDelegate
@@ -60,9 +95,10 @@
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
     didReceiveData:(NSData *)data {
-    [_bufferData appendData:data];
+    SocketPacket *packet = [[SocketPacket alloc] initWithData:data];
+    [_bufferQueue addObject:packet];
     if (_expectTotalBytes>0) {
-        NSLog(@"didReceiveData data progress:%f",[_bufferData length]*1.0/(_expectTotalBytes *1.0));
+        NSLog(@"didReceiveData data progress:%f",[data length]*1.0/(_expectTotalBytes *1.0));
     } else {
         NSLog(@"didReceiveData data length:%lu",[data length]);
     }
