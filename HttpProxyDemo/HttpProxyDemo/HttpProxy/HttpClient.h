@@ -10,4 +10,5 @@
 
 @interface HttpClient : NSObject
 
+- (instancetype)
 @end
