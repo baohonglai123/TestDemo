@@ -12,6 +12,7 @@
 
 @property (nonatomic,readonly) NSData *nextBuffer;
 @property (nonatomic,readonly) NSDictionary *respHeaders;
+@property (nonatomic,assign) NSUInteger expectedMaxSize;//期望的最大缓存的容量，默认1MB
 
 - (instancetype) initWithUrl:(NSURL *) url;
 - (void) start;

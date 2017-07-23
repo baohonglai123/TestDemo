@@ -93,14 +93,16 @@ enum tag_tcp {
     [rep appendData:rep_data];
     
     [socket writeData:rep withTimeout:TIMEOUT_NONE tag:TAG_REPLY];
-//    [self writeData];
+    [self writeData];
 }
 
 - (void) writeData {
     NSData *bufferData = [_httpClient nextBuffer];
     NSLog(@"writeData size:%lu",bufferData.length);
-    [_clientSocket writeData:bufferData withTimeout:-1 tag:0];
-    [_clientSocket disconnectAfterReadingAndWriting];
+    if (bufferData.length > 0) {
+        [_clientSocket writeData:bufferData withTimeout:-1 tag:0];
+//        [_clientSocket disconnectAfterReadingAndWriting];
+    }
 }
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(nonnull NSData *)data withTag:(long)tag {
     NSLog(@"didReadData called tag:%ld, data size:%lu",tag,[data length]);

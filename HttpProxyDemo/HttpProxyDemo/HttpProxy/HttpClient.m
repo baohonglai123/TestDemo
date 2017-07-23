@@ -33,6 +33,7 @@
     NSMutableArray *_bufferQueue;
     NSDictionary *_responseHeaders;
     long long _expectTotalBytes;
+    NSUInteger _bufferFullThresh;
 
 }
 @end
@@ -54,12 +55,17 @@
     _session = [NSURLSession sessionWithConfiguration: sessionConfig delegate:self delegateQueue:nil];
     _dataTask = [_session dataTaskWithURL:_httpUrl];
     _bufferQueue = [NSMutableArray new];
+    _expectedMaxSize = 100*1024;
+    _bufferFullThresh = (NSUInteger)(_expectedMaxSize * 0.1);
 }
 
 - (void) start {
     [_dataTask resume];
 }
 - (void) pause {
+    if (_dataTask.state == NSURLSessionTaskStateSuspended) {
+        return;
+    }
     [_dataTask suspend];
 }
 - (void) stop {
@@ -74,12 +80,26 @@
             [result appendData:packet->buffer];
         }
         [_bufferQueue removeAllObjects];
+        [self start];
+        NSLog(@"继续下载");
         return [result copy];
     }
 }
 
 - (NSDictionary*) respHeaders {
     return [_responseHeaders copy];
+}
+
+- (BOOL) checkBufferFull {
+    NSUInteger avalibleBytes = 0;
+    for (SocketPacket *packet in _bufferQueue) {
+        avalibleBytes += packet->buffer.length;
+    }
+    NSLog(@"avalibleBytes :%lu",avalibleBytes);
+    if (avalibleBytes + _bufferFullThresh > _expectedMaxSize) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - NSURLSessionDelegate
@@ -101,6 +121,10 @@
         NSLog(@"didReceiveData data progress:%f",[data length]*1.0/(_expectTotalBytes *1.0));
     } else {
         NSLog(@"didReceiveData data length:%lu",[data length]);
+    }
+    if ([self checkBufferFull]) {
+        NSLog(@"buffer is full 暂停下载");
+        [self pause];
     }
     
 }
