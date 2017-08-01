@@ -1,16 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#http://newapi.meipai.com/live_channels/programs.json?from=1&page=1&count=100
 
-import httplib
-conn = httplib.HTTPConnection("192.168.2.2",8898,False,10)
-conn.request("GET", "/live_channels/programs.json?from=1&page=1&count=100")
-conn.timeout
-response = conn.getresponse()
-print response
+from socket import *
 
-data = response.read()
-if data:
-    print data
-else:
-    print ("no data to read")
+HOST = '192.168.1.103'       #服务器的主机名
+PORT = 8898          #端口号
+BUFSIZ = 1024         #缓冲区
+ADDR = (HOST,PORT)     #地址
+
+tcpCliSocket = socket(AF_INET,SOCK_STREAM)    #创建客户端套接字
+tcpCliSocket.connect(ADDR)          #连接服务器
+
+request = "GET /live_channels/programs.json?from=1&page=1&count=100 HTTP/1.1\r\n"
+reqeust_headers = "Host:"+HOST+"\r\n"
+tcpCliSocket.send(request.encode('utf-8'))
+tcpCliSocket.send(reqeust_headers.encode('utf-8'))
+
+while True:                #通信循环
+    data = tcpCliSocket.recv(BUFSIZ)     #接受服务器返回信息
+    if not data:        #如果服务器未返回信息，关闭通信循环
+        break
+    print('get:',data.decode('utf-8'))
+
+tcpCliSocket.close()

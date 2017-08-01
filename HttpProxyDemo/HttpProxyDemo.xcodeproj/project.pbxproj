@@ -165,8 +165,8 @@
 				TargetAttributes = {
 					CD40AA381F134E7400ADC7C6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = MT2BRNBJYZ;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = U8QJ84P6Q7;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -381,14 +381,15 @@
 			baseConfigurationReference = 039CDEAD3704972223BFEB7D /* Pods-HttpProxyDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MT2BRNBJYZ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U8QJ84P6Q7;
 				INFOPLIST_FILE = HttpProxyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HttpProxyDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HttpProxyDemo.person;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5d0de7c4-7fdf-49d8-a17d-62071c9aaa93";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.*";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -397,11 +398,12 @@
 			baseConfigurationReference = 3BCFF41B43E565359C04232D /* Pods-HttpProxyDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U8QJ84P6Q7;
 				INFOPLIST_FILE = HttpProxyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HttpProxyDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HttpProxyDemo.person;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

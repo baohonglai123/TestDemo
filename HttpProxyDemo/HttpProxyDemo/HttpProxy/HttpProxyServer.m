@@ -93,7 +93,7 @@ enum tag_tcp {
     [rep appendData:rep_data];
     
     [socket writeData:rep withTimeout:TIMEOUT_NONE tag:TAG_REPLY];
-    [self writeData];
+//    [self writeData];
 }
 
 - (void) writeData {
@@ -118,8 +118,6 @@ enum tag_tcp {
             NSArray *a = [request componentsSeparatedByString:@" "];
             method = [a objectAtIndex:0];
             location = [a objectAtIndex:1];
-
-            
             headers = [[NSMutableDictionary alloc] init];
             [sock readDataToData:[GCDAsyncSocket CRLFData] withTimeout:TIMEOUT_NONE tag:TAG_HEADER];
             return;
