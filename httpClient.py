@@ -3,7 +3,7 @@
 
 from socket import *
 
-HOST = '192.168.1.103'       #服务器的主机名
+HOST = '192.168.2.2'       #服务器的主机名
 PORT = 8898          #端口号
 BUFSIZ = 1024         #缓冲区
 ADDR = (HOST,PORT)     #地址
@@ -11,7 +11,7 @@ ADDR = (HOST,PORT)     #地址
 tcpCliSocket = socket(AF_INET,SOCK_STREAM)    #创建客户端套接字
 tcpCliSocket.connect(ADDR)          #连接服务器
 
-request = "GET /live_channels/programs.json?from=1&page=1&count=100 HTTP/1.1\r\n"
+request = "GET /index HTTP/1.1\r\n"
 reqeust_headers = "Host:"+HOST+"\r\n"
 tcpCliSocket.send(request.encode('utf-8'))
 tcpCliSocket.send(reqeust_headers.encode('utf-8'))

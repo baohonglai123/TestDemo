@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *urlStr = @"http://newapi.meipai.com/live_channels/programs.json?from=1&page=1&count=100";
+    NSString *urlStr = @"http://www.baidu.com";
 //    urlStr = @"http://mvvideo1.meitudata.com/595cdb60aafc39280.mp4";
     _proxyServer = [[HttpProxyServer alloc] initWithUrl:[NSURL URLWithString:urlStr]];
 }
@@ -64,8 +64,7 @@
 }
 
 - (void) startHttpRequest {
-    NSString *localPath = @"http://127.0.0.1:8898/live_channels/programs.json?from=1&page=1&count=100";
-//    localPath = @"http://newapi.meipai.com/live_channels/programs.json?from=1&page=1&count=100";
+    NSString *localPath = @"http://127.0.0.1:8898/index";
     NSURLSession *session = [NSURLSession sharedSession];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:localPath]];
     NSLog(@"before request:%p",request);
