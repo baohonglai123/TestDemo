@@ -12,7 +12,7 @@ tcpCliSocket = socket(AF_INET,SOCK_STREAM)    #创建客户端套接字
 tcpCliSocket.connect(ADDR)          #连接服务器
 
 request = "GET /index HTTP/1.1\r\n"
-reqeust_headers = "Host:"+HOST+"\r\n"
+reqeust_headers = "Host: "+HOST+"\r\n"
 tcpCliSocket.send(request.encode('utf-8'))
 tcpCliSocket.send(reqeust_headers.encode('utf-8'))
 
